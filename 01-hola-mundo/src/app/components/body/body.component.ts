@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+textoBoton: string = 'Ocultar';
+tipoIcono: string = 'far fa-eye-slash';
+flagMostrar: boolean = true;
+personajes: string[] = ['Spiderman', 'Venom', 'Thor', 'Flash'];
+frase: any = {
+  mensaje: 'Un gran poder requiere una gran responsabilidad.',
+  autor: 'Ben Barker'
+}
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void { }
+
+
+  estadoBoton() {
+    if(this.flagMostrar === true){
+      this.textoBoton = 'Ocultar'
+      this.tipoIcono = 'far fa-eye-slash'
+    }else {
+      this.textoBoton = 'Mostrar'
+      this.tipoIcono = 'far fa-eye'
+    }
   }
+
+
 
 }

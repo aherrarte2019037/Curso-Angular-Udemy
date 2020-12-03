@@ -1,0 +1,26 @@
+<div class="jumbotron animate__animated animate__fadeIn animate__faster bg-white mb-0 pb-4">
+    <div class="container">
+      <h1 class="display-4">Resultados de búsqueda</h1>
+      <hr class="mt-0 mb-2">
+      <p class="lead">Para "{{ textoBuscar }}"</p>
+    </div>
+</div>
+
+<div class="container animate__animated animate__fadeIn animate__fast">
+
+    <div class="card-columns">
+
+        <app-heroe-card class="animate__animated animate__fadeIn animate__fast" *ngFor="let heroe of heroesRes" [heroe]="heroe"></app-heroe-card>
+
+    </div>
+
+    <div *ngIf="heroesRes.length === 0" class="row justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <img src="assets/img/not-found.svg" class="img-fluid" style="margin-top: -8%">
+            <h4 class="text-center" style="font-family: 'Open Sans', sans-serif;">¡Upps! No se encontraron resultados...</h4>
+        </div>    
+    </div>
+    
+</div>
+
+<div *ngIf="heroesRes.length !== 0" style="height: 100px"></div>

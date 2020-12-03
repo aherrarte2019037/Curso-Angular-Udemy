@@ -1,0 +1,14 @@
+.title-card {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+
+.body-card {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15.3px;
+}
+
+.btn-hide {
+    box-shadow: 0 6px 7px -3px rgba(102, 102, 102, 0.6);
+}

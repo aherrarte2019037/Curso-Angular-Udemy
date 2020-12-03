@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#titulo-nav {
+    background: linear-gradient(to right, #fa7690, #8e9eec);
+    background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+.search-box {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    height: 30px;
+    width: 300px;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    background: #343a40;
+    background-clip: padding-box;
+    padding: 10px;
+}
+
+.search-box:hover::after {
+    box-shadow: 0px 2px 1px 1px #786491;
+}
+
+
+.search-box::after{
+    position: absolute;
+    top: -2px; bottom: -2px;
+    left: -2px; right: -2px;
+    background: linear-gradient(to right, #fc5c7d, #6a82fb);
+    content: '';
+    z-index: -1;
+    border-radius: 18px;
+    transition: 0.2s;
+}
+
+.search-input, .search-input:focus{
+    color: rgb(148, 148, 148);
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 300px;
+    padding-left: 39px;
+    padding-right: 35px;
+    padding-bottom: 5px;
+}
+
+#search-icon {
+    cursor: pointer;
+    left: 18px; 
+    top:5px; 
+    position: absolute
+}
+
+#search-close {
+    right: 16px;
+    top: 8px; 
+    position: absolute
+}
+
+.search-input::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: rgb(148, 148, 148);
+}
+
+@media only screen and (max-width: 767px) {
+    .search-box {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    .search-input {
+        width: 70%;
+    }
+
+}
+
+
+#link-home:focus, #link-home:hover {
+    color: #17a2b8!important;
+}
+
+
+#link-heroes:focus, #link-heroes:hover {
+    color: #dc3545!important;
+}
+
+
+#link-about:focus, #link-about:hover {
+    color: #28a745!important;
+}  
+
+
+@media only screen and (min-width: 1200px) {
+    .card-columns{
+        column-count: 4;
+    }
+
+}
+
+.btn-back {
+    border: none;
+    padding-left: 2px;
+    margin: 0;
+    transition: 0.2s;
+}
+
+.btn-back:hover, .btn-back:focus, .btn-back:active {
+    background: none!important;
+    color: #a5a8ac!important;
+    box-shadow: none!important;
+}

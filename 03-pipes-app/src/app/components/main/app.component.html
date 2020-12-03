@@ -1,0 +1,153 @@
+<div class="container">
+  <h1 class="mt-4">Pipes <small>Angular</small></h1>
+  <hr class="mb-5">
+
+  <div class="row">
+    <div class="col">
+
+        <table class="table">
+            <thead class="thead-dark rounded-pill">
+              <tr>
+                <th scope="col">Entrada</th>
+                <th scope="col">Pipe</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Salida</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-info">{{ entrada }}</th>
+                <td class="text-success">uppercase</td>
+                <td class="text-muted">Transorma a mayúsculas</td>
+                <th class="text-primary">{{ entrada | uppercase }}</th>
+              </tr>
+              
+              <tr>
+                <th class="text-info">{{ entrada }}</th>
+                <td class="text-success">lowercase</td>
+                <td class="text-muted">Transorma a minúsculas</td>
+                <th class="text-primary">{{ entrada | lowercase }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ entrada2 }}</th>
+                <td class="text-success">Pipe personalizado</td>
+                <td class="text-muted">Mayuscúlas cada palabra</td>
+                <th class="text-primary">{{ entrada2 | capitalizator:false }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ entrada }}</th>
+                <td class="text-success">slice:0:3</td>
+                <td class="text-muted">Corta una porción de texto</td>
+                <th class="text-primary">{{ entrada | slice:0:3 }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ arreglo_entrada }}</th>
+                <td class="text-success">slice:4:9</td>
+                <td class="text-muted">Corta una porción de texto</td>
+                <th class="text-primary">{{ arreglo_entrada | slice:4:9 }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ PI }}</th>
+                <td class="text-success">number</td>
+                <td class="text-muted">Agrega formato al los números</td>
+                <th class="text-primary">{{ PI | number }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ PI }}</th>
+                <td class="text-success">number:'1.0-0'</td>
+                <td class="text-muted">Agrega formato al los números</td>
+                <th class="text-primary">{{ PI | number:'1.0-0' }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ PI }}</th>
+                <td class="text-success">number:'2.3-3'</td>
+                <td class="text-muted">Agrega formato al los números</td>
+                <th class="text-primary">{{ PI | number:'2.3-3' }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ porcentaje }}</th>
+                <td class="text-success">percent</td>
+                <td class="text-muted">Formatea número a porcentaje</td>
+                <th class="text-primary">{{ porcentaje | percent }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ porcentaje }}</th>
+                <td class="text-success">percent</td>
+                <td class="text-muted">Formatea número a porcentaje</td>
+                <th class="text-primary">{{ porcentaje | percent:'2.2-2' }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ moneda }}</th>
+                <td class="text-success">currency:'USD':'symbol-narrow'</td>
+                <td class="text-muted">Formatea número a moneda ISO 4217</td>
+                <th class="text-primary">{{ moneda | currency:'USD':'symbol-narrow' }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ moneda }}</th>
+                <td class="text-success">currency:'GTQ':'symbol-narrow':'.0-0''</td>
+                <td class="text-muted">Formatea número a moneda ISO 4217</td>
+                <th class="text-primary">{{ moneda | currency:'GTQ':'symbol-narrow':'.0-0' }}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ promesa }}</th>
+                <td class="text-success">async</td>
+                <td class="text-muted">Mustra valores asícronos</td>
+                <th class="text-primary">{{ promesa | async}}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ fecha }}</th>
+                <td class="text-success">date</td>
+                <td class="text-muted">Mustra valores en formato de fechas</td>
+                <th class="text-primary">{{ fecha | date}}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ fecha }}</th>
+                <td class="text-success">date:'short'</td>
+                <td class="text-muted">Mustra valores en formato de fechas</td>
+                <th class="text-primary">{{ fecha | date:'short'}}</th>
+              </tr>
+
+              <tr>
+                <th class="text-info">{{ fecha }}</th>
+                <td class="text-success">
+                  <a (click)="setEs()" class="btn btn-primary btn-sm btn-block rounded-pill">Español</a>
+                  <a (click)="setEn()" class="btn btn-success btn-sm btn-block  rounded-pill">Inglés</a>
+                  <a (click)="setFr()" class="btn btn-danger btn-sm btn-block  rounded-pill">Francés</a>
+                </td>
+                <td class="text-muted">Mustra valores en formato de fechas</td>
+                <th class="text-primary">{{ fecha | date:'MMMM dd, yyyy':'':idioma}}</th>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="mt-5">SLICE PIPE con *ngFor y Array</h4>
+          <ul class="list-group">
+              <li class="list-group-item pb-1 pt-1" *ngFor="let number of arreglo_entrada | slice:5:10">{{ number }}</li>
+          </ul>
+
+          <h4 class="mt-4">JSON PIPE</h4>
+          <div class="mb-5 pb-5">
+
+            <pre>
+              {{ entrada_heroe | json}}
+            </pre>
+
+          </div>
+
+    </div>
+  </div>
+
+</div>
